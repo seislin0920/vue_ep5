@@ -8,8 +8,8 @@ import { useWindowPosition } from "./composables/useWindowPosition.js";
 
 const { pageX, pageY } = useWindowPosition();
 const { count, addcount } = useAddCount(0);
-const addclick = () => {
-     addcount(5);
+const addclick = (n1) => {
+     addcount(n1);
 };
 
 const { cat, errormessage, Fetschin } = useFetchCard();
@@ -25,7 +25,7 @@ onMounted(() => {
           <header>
                <h1>pageX:{{ pageX }} pageY:{{ pageY }}</h1>
                <h1>{{ count }}</h1>
-               <button @click="addclick">Add</button>
+               <button @click="addclick(count + 2)">Add</button>
                <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
                <div class="wrapper">
